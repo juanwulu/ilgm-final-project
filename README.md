@@ -87,6 +87,7 @@ Each row is the visualization with the same prior $\\alpha_0$ under three differ
 
     ```bash
     conda activate py38
+    pip install -e .
     pip install pytest
     pytest -v .
     ```

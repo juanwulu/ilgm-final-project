@@ -68,7 +68,7 @@ class INTERACTIONData(BaseData):
 
     @property
     def map_feature_dims(self) -> int:
-        return 10
+        return 11
 
     @property
     def motion_feature_dims(self) -> int:
@@ -375,25 +375,25 @@ class INTERACTIONDataset(Dataset):
                 "GUARD_RAIL",
                 "ROAD_BORDER",
             ):
-                type_encoding = np.array([1, 0, 0, 0, 0, 0, 0])
+                type_encoding = np.array([0, 1, 0, 0, 0, 0, 0, 0])
             elif record["type"] == "LINE_THIN_DASHED":
-                type_encoding = np.array([0, 1, 0, 0, 0, 0, 0])
+                type_encoding = np.array([0, 0, 1, 0, 0, 0, 0, 0])
             elif record["type"] in (
                 "LINE_THIN_SOLID",
                 "LINE_THIN_SOLID_SOLID",
             ):
-                type_encoding = np.array([0, 0, 1, 0, 0, 0, 0])
+                type_encoding = np.array([0, 0, 0, 1, 0, 0, 0, 0])
             elif record["type"] in (
                 "LINE_THICK_SOLID",
                 "LINE_THICK_SOLID_SOLID",
             ):
-                type_encoding = np.array([0, 0, 0, 1, 0, 0, 0])
+                type_encoding = np.array([0, 0, 0, 0, 1, 0, 0, 0])
             elif record["type"] == "STOP_LINE":
-                type_encoding = np.array([0, 0, 0, 0, 1, 0, 0])
+                type_encoding = np.array([0, 0, 0, 0, 0, 1, 0, 0])
             elif record["type"] == "PEDESTRIAN_MARKING":
-                type_encoding = np.array([0, 0, 0, 0, 0, 1, 0])
+                type_encoding = np.array([0, 0, 0, 0, 0, 0, 1, 0])
             elif record["type"] in ("VIRTUAL", "VIRTUAL_SOLID"):
-                type_encoding = np.array([0, 0, 0, 0, 0, 0, 1])
+                type_encoding = np.array([0, 0, 0, 0, 0, 0, 0, 1])
             type_encoding = np.broadcast_to(
                 type_encoding[None, :],
                 (feats.shape[0], len(type_encoding)),
