@@ -1,0 +1,7 @@
+# Custom zero-start linear warmup scheduler
+_target_: src.model.scheduler.ZeroLinearWarmup
+_partial_: true
+
+T_max: ??? # Maximum number of iterations
+last_epoch: -1 # The index of the last epoch. Default: -1.
+verbose: false # If True, prints a message to stdout for each update. Default: False.

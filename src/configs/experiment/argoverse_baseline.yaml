@@ -1,0 +1,40 @@
+# @package _global_
+
+defaults:
+  - override /data: argoverse.yaml
+  - override /model: baseline.yaml
+  - override /callbacks: default
+  - override /trainer: default
+  - override /logger: tensorboard.yaml
+
+tags: argoverse_baseline
+
+callbacks:
+  model_checkpoint:
+    monitor: "val/mfde_best"
+    mode: "min"
+
+  early_stopping:
+    monitor: "val/mfde_best"
+    mode: "min"
+
+seed: 42
+
+data:
+  radius: 50.0
+  batch_size: 128
+
+model:
+  network_kwargs:
+    map_in_features: 2
+    motion_in_features: 2
+    observation_horizon: 20
+    prediction_horizon: 30
+
+trainer:
+  max_epochs: 36
+
+logger:
+  tensorboard:
+    name: baseline
+    version: ${now:%Y-%m-%d-%H-%M-%S}

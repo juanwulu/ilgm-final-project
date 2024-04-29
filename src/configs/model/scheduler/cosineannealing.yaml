@@ -1,0 +1,8 @@
+# PyTorch CosineAnnealingLR scheduler
+_target_: torch.optim.lr_scheduler.CosineAnnealingLR
+_partial_: true
+
+T_max: ??? # Maximum number of iterations.
+eta_min: 0.0 # Minimum learning rate. Default: 0.
+last_epoch: -1 # The index of last epoch. Default: -1.
+verbose: false # If True, prints a message to stdout for each update. Default: False.

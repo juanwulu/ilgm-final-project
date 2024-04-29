@@ -1,0 +1,9 @@
+# Simulate DDP training with CPU devices
+#
+
+defaults:
+  - default
+
+accelerator: cpu
+devices: 2
+strategy: ddp_spawn

@@ -1,0 +1,24 @@
+# INTERACTION dataset module configuration
+# Author: Juanwu Lu
+_target_: src.data.datamodule.INTERACTIONDataModule
+_convert_: "all"
+
+root: ${paths.data_dir}
+challenge_type: single-agent
+subsampler:
+  _target_: src.data.subsampler.INTERACTIONSubSampler
+  _convert_: "all"
+  ratio: 1.0
+  locations: null
+transform:
+  - _target_: src.data.tools.TargetCentricTransform
+    _convert_: "all"
+    rotate: true
+  - _target_: src.data.tools.TargetReshapeTransform
+    _convert_: "all"
+radius: null
+enable_test: ${test}
+force_data_cache: false
+batch_size: 64
+num_workers: null
+pin_memory: true

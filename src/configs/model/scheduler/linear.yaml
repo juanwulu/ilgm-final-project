@@ -1,0 +1,9 @@
+# PyTorch LinearLR scheduler
+_target_: torch.optim.lr_scheduler.LinearLR
+_partial_: true
+
+start_factor: 0.0 # The number to multiply learning rate in the first epoch. Default: 0.0.
+end_factor: 1.0 # The number to multiply learning rate at the end of linear changing process. Default: 1.0.
+total_iters: 5 # The number of iterations that multiplicative factor reaches to 1. Default: 5.
+last_epoch: -1 # The index of the last epoch. Default: -1.
+verbose: false # If True, prints a message to stdout for each update. Default: False.

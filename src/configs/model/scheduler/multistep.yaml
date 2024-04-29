@@ -1,0 +1,8 @@
+# PyTorch MultiStepLR scheduler
+_target_: torch.optim.lr_scheduler.MultiStepLR
+_partial_: true
+
+milestones: [20, 22, 24, 26, 28, 30] # list of increasing epoch indices.
+gamma: 0.5 # multiplicative factor of learning rate decay.
+last_epoch: -1 # the index of last epoch. Default: -1.
+verbose: false # if true, prints a message to stdout for each update.
