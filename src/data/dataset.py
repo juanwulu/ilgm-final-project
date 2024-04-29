@@ -432,9 +432,7 @@ class INTERACTIONDataset(Dataset):
         waylayer.index = waylayer.index.map(map_id_mapper)
 
         # parse node features
-        _way_outputs = waylayer.apply(
-            _parse_map_features, axis=1, is_lane=False
-        )
+        _way_outputs = waylayer.apply(_parse_map_features, axis=1)
         node_feats = np.vstack([out[0] for out in _way_outputs])
         node_centroids = np.vstack([out[1] for out in _way_outputs])
 

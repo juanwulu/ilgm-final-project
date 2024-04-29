@@ -64,7 +64,9 @@ For sampling, the model first generate a huge number of dense candidates, and th
 
 ![benchmark](docs/benchmark.png)
 
-#### Visualizations of destination posterior predictive distributions. (Each row is the visualization with the same prior $\\alpha_0$ under three different cases, and the prior $\\alpha_0$ for each row are $1.0$, $10.0$, and $100.0$, respectively)
+#### Visualizations of destination posterior predictive distributions
+
+Each row is the visualization with the same prior $\\alpha_0$ under three different cases, and the prior $\\alpha_0$ for each row are $1.0$, $10.0$, and $100.0$, respectively
 
 ![visualization](docs/visualization.png)
 

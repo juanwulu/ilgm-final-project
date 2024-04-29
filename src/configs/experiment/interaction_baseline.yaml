@@ -26,7 +26,7 @@ data:
 
 model:
   network_kwargs:
-    map_in_features: 11
+    map_in_features: 10
     motion_in_features: 8
     observation_horizon: 10
     prediction_horizon: 30
