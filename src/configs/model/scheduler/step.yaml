@@ -1,0 +1,8 @@
+# PyTorch StepLR scheduler
+_target_: torch.optim.lr_scheduler.StepLR
+_partial_: true
+
+step_size: 5 # period of learning rate decay.
+gamma: 0.3 # multiplicative factor of learning rate decay.
+last_epoch: -1 # the index of last epoch. Default: -1.
+verbose: false # if true, prints a message to stdout for each update.

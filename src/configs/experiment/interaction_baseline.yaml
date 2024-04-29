@@ -1,0 +1,40 @@
+# @package _global_
+
+defaults:
+  - override /data: interaction.yaml
+  - override /model: baseline.yaml
+  - override /callbacks: default
+  - override /trainer: default
+  - override /logger: tensorboard.yaml
+
+tags: interaction_baseline
+
+callbacks:
+  model_checkpoint:
+    monitor: "val/mfde_best"
+    mode: "min"
+
+  early_stopping:
+    monitor: "val/mfde_best"
+    mode: "min"
+
+seed: 42
+
+data:
+  radius: 50.0
+  batch_size: 128
+
+model:
+  network_kwargs:
+    map_in_features: 11
+    motion_in_features: 8
+    observation_horizon: 10
+    prediction_horizon: 30
+
+trainer:
+  max_epochs: 36
+
+logger:
+  tensorboard:
+    name: baseline
+    version: ${now:%Y-%m-%d-%H-%M-%S}

@@ -1,0 +1,7 @@
+# See https://lightning.ai/docs/pytorch/stable/api/lightning.pytorch.callbacks.ModelSummary.html
+# Author: Juanwu Lu
+
+model_summary:
+  _target_: lightning.pytorch.callbacks.ModelSummary
+  _convert_: "all"
+  max_depth: 1

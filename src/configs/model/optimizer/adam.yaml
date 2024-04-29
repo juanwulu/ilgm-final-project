@@ -1,0 +1,16 @@
+# PyTorch Adam optimizer
+_target_: torch.optim.Adam
+_partial_: true
+
+lr: 0.001 # learning rate
+betas: # coefficients used for computing running averages of gradient and its square
+  - 0.9
+  - 0.999
+eps: 0.00000001 # term added to the denominator to improve numerical stability
+weight_decay: 0.001 # weight decay (L2 penalty)
+amsgrad: false # whether to use the AMSGrad variant of this algorithm from the paper "On the Convergence of Adam and Beyond"
+foreach: null # whether foreach implementation of optimizer is used. If unspecified by the user, we will try to use foreach over the for-loop implementation on CUDA, since it is usually significantly more performant.
+maximize: false # maximize the params based on the objective, instead of minimizing.
+capturable: false # whether this instance is safe to capture in a CUDA graph.
+differentiable: false # whether autograd shouldoccur through the optimizer step in training.
+fused: null # whether the fused implementation (CUDA only) is used.

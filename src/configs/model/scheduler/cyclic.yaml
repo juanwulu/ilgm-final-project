@@ -1,0 +1,17 @@
+# PyTorch CyclicLR scheduler
+_target_: torch.optim.lr_scheduler.CyclicLR
+_partial_: true
+
+base_lr: 0.0005 # initial learning rate which is the lower boundary in the cycle for each parameter group.
+max_lr: 0.005 # upper learning rate boundaries in the cylce for each parameter group.
+step_size_up: 4200 # number of training iterations in the increasing half of a cycle.
+step_size_down: 2200 # number of training iterations in the decreasing half of a cycle. If step_size_down is None, it is set to step_size_up.
+mode: triangular # Policies for cyclic learning rate.
+gamma: 1.0 # constant in 'exp_range' scaling function: gamma**(cycle iterations)
+scale_fn: null # custom scaling policy defined by a single argument lambda function, where 0 <= scale_fn(x) <= 1 for all x >= 0.
+scale_mode: cycle # {'cycle', 'iterations'}.
+cycle_momentum: false
+base_momentum: 0.8 # lower momentum boundaries in the cycle for each parameter group. Note that momentum is cycled inversely to learning rate; at the peak of a cycle, momentum is 'base_momentum' and learning rate is 'max_lr`.
+max_momentum: 0.9 # upper momentum boundaries in the cycle for each parameter group. Functionally, it defines the cycle amplitude (max_momentum - base_momentum). Note that momentum is cycled inversely to learning rate; at the start of a cycle, momentum is 'max_momentum' and learning rate is 'base_lr`
+last_epoch: -1 # the index of last epoch. Default: -1.
+verbose: false # if true, prints a message to stdout for each update.
