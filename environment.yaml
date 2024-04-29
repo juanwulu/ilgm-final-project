@@ -1,6 +1,6 @@
 name: py38
 channels:
-  - defaults
+  - nvidia
   - pytorch
   - conda-forge
   - defaults
