@@ -71,3 +71,58 @@ Each row is the visualization with the same prior $\\alpha_0$ under three differ
 ![visualization](docs/visualization.png)
 
 ## Getting started
+
+### Installation
+
+1. Install [Anaconda&reg;](https://docs.anaconda.com/free/anaconda/install/index.htmlhttps://www.anaconda.com/) or [Miniconda&reg;](https://docs.anaconda.com/free/miniconda/miniconda-install/) from official website.
+2. Create the virtual environment from the configuration file
+
+    ```bash
+    git clone https://github.com/juanwulu/ilgm-final-project.git
+    cd ilgm-final-project
+    conda env create -f environment.yaml
+    ```
+
+3. Activate and validate your installation
+
+    ```bash
+    conda activate py38
+    pip install pytest
+    pytest -v .
+    ```
+
+### Prepare the dataset
+
+1. Download the INTERACTION dataset from [this link](https://purdue0-my.sharepoint.com/:f:/g/personal/juanwu_purdue_edu/EkByUH2OW4NItM0m3IFxPmMBKKM5q7lZUgT9LfXh1h1PJw?e=qhlnKl).
+2. Place the `raw` data folder under the `<ROOT>/data` directory. You should have a file structure as below:
+
+   ```bash
+   .
+    ├── data
+    │   ├── processed
+    │   │   ├── maps
+    │   │   └── tracks
+    │   └── raw
+    │       ├── maps
+    │       ├── test_conditional-multi-agent
+    │       ├── test_conditional-single-agent
+    │       ├── test_multi-agent
+    │       ├── test_single-agent
+    │       ├── train
+    │       ├── trainval
+    │       └── val
+   ```
+
+### Train the model from scratch
+
+To train a model from scratch, you can run the following command in shell under the project root directory:
+
+```bash
+PYTHONPATH=$(pwd) python src/train.py experiment=interaction_baseline data.root=$(pwd)/data/ data.challenge_type=single-agent data.batch_size=${BATCH_SIZE} data.num_workers=${NUM_WORKER} model.network_kwargs.num_goal_heads=${NUM_GOAL_HEAD} model.network_kwargs.alpha=${PRIOR_ALPHA}  trainer=gpu
+```
+
+where `BATCH_SIZE`, `NUM_WORKER`, `NUM_GOAL_HEAD`, and `PRIOR_ALPHA` are tunable arguments.
+
+### Investigate an existing checkpoint
+
+Checkout the Jupyter&reg; notebook under the `notebook/` directory.
