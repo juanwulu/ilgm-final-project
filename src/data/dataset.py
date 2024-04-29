@@ -15,7 +15,6 @@ from pathlib import Path
 from typing import Dict, List, Literal, Optional, Tuple
 
 import geopandas as gpd
-
 import numpy as np
 import numpy.typing as npt
 import pandas as pd
