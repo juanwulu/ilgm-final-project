@@ -4,7 +4,7 @@
 [![pytorch](https://img.shields.io/badge/PyTorch_2.0%2B-ee4c2c?logo=pytorch&logoColor=white)](https://pytorch.org/get-started/locally/)
 [![BSD 3-Clause License](https://img.shields.io/badge/license-BSD_3--clause-bc9b6a.svg)](https://github.com/ChocolateDave/g-neva/blob/master/LICENSE)
 [![codecov](https://codecov.io/gh/ChocolateDave/ilgm-final-project/branch/master/graph/badge.svg)](https://app.codecov.io/gh/juanwulu/ilgm-final-project/) \
-[![tests](https://github.com/juanwulu/ilgm-final-project/actions/workflows/test.yml/badge.svg)](https://github.com/juanwulu/ilgm-final-project/actions/workflows/test.yaml)
+[![tests](https://github.com/juanwulu/ilgm-final-project/actions/workflows/test.yaml/badge.svg)](https://github.com/juanwulu/ilgm-final-project/actions/workflows/test.yaml)
 [![PRs](https://img.shields.io/badge/PRs-welcome-darkgreen.svg)](https://github.com/juanwulu/ilgm-project/pulls)
 [![contributors](https://img.shields.io/github/contributors/juanwulu/ilgm-final-project.svg)](https://github.com/juanwulu/ilgm-final-project/graphs/contributors)
 
@@ -60,12 +60,12 @@ For sampling, the model first generate a huge number of dense candidates, and th
 
 ### Results
 
-- Benchmark performance with existing works
+#### Benchmark performance with existing works
 
-  ![benchmark](docs/benchmark.png)
+![benchmark](docs/benchmark.png)
 
-- Visualizations of destination posterior predictive distributions. (Each row is the visualization with the same prior $\\alpha_0$ under three different cases, and the prior $\\alpha_0$ for each row are $1.0$, $10.0$, and $100.0$, respectively)
+#### Visualizations of destination posterior predictive distributions. (Each row is the visualization with the same prior $\\alpha_0$ under three different cases, and the prior $\\alpha_0$ for each row are $1.0$, $10.0$, and $100.0$, respectively)
 
-  ![visualization](docs/visualization.png)
+![visualization](docs/visualization.png)
 
 ## Getting started
